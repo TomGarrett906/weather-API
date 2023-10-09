@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Weather API</title>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./static/styles.css" />
+</head>
+<body>
+    <header>
+    <h1>Today's Weather : </h1></header>
+    
+    <main class="container">
+        <h4>Search by city name or zip code</h4></header>
+        <div class="weather-container">
+            <form id="weather-form">
+                <div>
+                    <button type="submit">Get Weather</button>
+                    <input type="text" id="city" name="city" placeholder="Enter city name" />
+                </div>
+            </form>
+            <div class="weather-details">
+                <div class="weather-info">
+                    <p id="hiTemp"></p>
+                    <p id="loTemp"></p>
+                </div>
+                <div class="weather-forecast">
+                    <p id="forecast"></p>
+                    <p id="humidity"></p>
+                </div>
+            </div>
+        </div>
+        <div class="background-image" id="bgImage"></div>
+
+        <!-- <img src="./static/images/cloud.jpeg" alt="" id="cloudBg" class="hidden-image" />
+        <img src="./static/images/sunny.jpeg" alt="" id="sunnyBg" class="hidden-image" />
+        <img src="./static/images/rainy.jpeg" alt="" id="rainyBg" class="hidden-image" />
+        <img src="./static/images/foggy.jpeg" alt="" id="foggyBg" class="hidden-image" />
+        <img src="./static/images/snow.jpeg" alt="" id="snowBg" class="hidden-image" /> -->
+    </main>
+</body>
+</html>
