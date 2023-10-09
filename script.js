@@ -1,5 +1,9 @@
 console.log('Open Weather Api');
 
+const body = document.body
+console.log(body)
+body.style.backgroundImage = "url('./static/images/cloud.jpeg')"
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('weather-form');
   const bgImage = document.getElementById('bgImage'); 
@@ -14,13 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await getData(city);
       console.log(data);
       getWeather(data);
+      changeBG(data);
     } catch (error) {
       console.error('Error:', error);
     }
   });
 
   async function getData(city) {
-    const apiKey = '66782ce4e0e139b86d87a0a60beebd12'
+
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
     const res = await fetch(url);
 
@@ -45,18 +50,21 @@ document.addEventListener('DOMContentLoaded', () => {
     forecast.textContent = `Forecast: ${data.weather[0].description}`;
     humidity.textContent = `Humidity: ${data.main.humidity}%`;
 
-    // if (data.weather[0].main === "Clear") {
-    //   bgImage.style.backgroundImage = url("./static/images/sunny.jpeg");
-    // } else if (data.weather[0].main === "Rain") {
-    //   bgImage.style.backgroundImage = url("./static/images/rainy.jpeg");
-    // } else if (data.weather[0].main === "Fog") {
-    //   bgImage.style.backgroundImage = url("./static/images/foggy.jpeg");
-    // } else if (data.weather[0].main === "Snow") {
-    //   bgImage.style.backgroundImage = url("./static/images/snow.jpeg");
-    // } else {
-    //   bgImage.style.backgroundImage = url("./static/images/cloud.jpeg");
-    // }
 
+
+function changeBG() {
+    if (data.weather[0].main === "Clear") {
+      bgImage.style.backgroundImage = url("./static/images/sunny.jpeg");
+    } else if (data.weather[0].main === "Rain") {
+      bgImage.style.backgroundImage = url("./static/images/rainy.jpeg");
+    } else if (data.weather[0].main === "Fog") {
+      bgImage.style.backgroundImage = url("./static/images/foggy.jpeg");
+    } else if (data.weather[0].main === "Snow") {
+      bgImage.style.backgroundImage = url("./static/images/snow.jpeg");
+    } else {
+      bgImage.style.backgroundImage = url("./static/images/cloud.jpeg");
+    }
+}
 
     bgImage.style.display = 'block';
   }

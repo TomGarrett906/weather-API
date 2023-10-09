@@ -5,16 +5,15 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgba(145, 211, 238, 0.466);
-    color: #007BFF;
+    color: #000000;
     height: 100vh;
     margin: 0;
     background-color: sky;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url('');
+     /* background-repeat: no-repeat; */
+    /* background-image: url('');  */
     /* background-image: '#bgImage'; */
-
 }
 
 header {
