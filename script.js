@@ -41,31 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const loTemp = document.getElementById('loTemp');
     const forecast = document.getElementById('forecast');
     const humidity = document.getElementById('humidity');
-
-    const celcius = data.main.temp - 273.15;
-    const fahrenheit = (celcius * 9/5) + 32;
-
-    hiTemp.textContent = `High: ${fahrenheit.toFixed(1)}°F`;
-    loTemp.textContent = `Low: ${fahrenheit.toFixed(1)}°F`;
+  
+    const highCelcius = data.main.temp_max - 273.15;
+    const lowCelcius = data.main.temp_min - 273.15;
+  
+    const highFahrenheit = (highCelcius * 9/5) + 32;
+    const lowFahrenheit = (lowCelcius * 9/5) + 32;
+  
+    hiTemp.textContent = `High: ${highFahrenheit.toFixed(1)}°F`;
+    loTemp.textContent = `Low: ${lowFahrenheit.toFixed(1)}°F`;
     forecast.textContent = `Forecast: ${data.weather[0].description}`;
     humidity.textContent = `Humidity: ${data.main.humidity}%`;
-
-
-
-function changeBG() {
-    if (data.weather[0].main === "Clear") {
-      bgImage.style.backgroundImage = url("./static/images/sunny.jpeg");
-    } else if (data.weather[0].main === "Rain") {
-      bgImage.style.backgroundImage = url("./static/images/rainy.jpeg");
-    } else if (data.weather[0].main === "Fog") {
-      bgImage.style.backgroundImage = url("./static/images/foggy.jpeg");
-    } else if (data.weather[0].main === "Snow") {
-      bgImage.style.backgroundImage = url("./static/images/snow.jpeg");
-    } else {
-      bgImage.style.backgroundImage = url("./static/images/cloud.jpeg");
-    }
-}
-
+  
     bgImage.style.display = 'block';
   }
 });
