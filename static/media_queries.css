@@ -6,7 +6,7 @@
     
     .container {
         width: 80%;
-        height: 80vw; /* Set height based on viewport width for a responsive circle */
+        height: 80vw;
       font-size: 22px;
       border-radius: 50%;
     }
@@ -62,7 +62,7 @@
   
     .container {
         width: 80%;
-        height: 80vw; /* Set height to the same percentage as width for a perfect circle */
+        height: 80vw; 
         font-size: 18px;
         max-width: none;
         max-height: none;
