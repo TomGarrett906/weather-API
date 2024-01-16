@@ -84,4 +84,9 @@
       font-size: 14px;
       margin: 10px;
     }
+
+    .weather-info,
+    .weather-forecast {
+      font-size: x-small;
+    }
 }
