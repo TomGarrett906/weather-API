@@ -4,6 +4,8 @@ const body = document.body
 console.log(body)
 body.style.backgroundImage = "url('./static/images/cloud.jpeg')"
 
+const apiKey = '66782ce4e0e139b86d87a0a60beebd12'
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('weather-form');
   const bgImage = document.getElementById('bgImage'); 
